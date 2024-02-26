@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/UI/HomeScreen.dart';
+import 'package:mvvm/di/serviceLocator.dart';
+import 'package:mvvm/view/HomeScreen.dart';
 
 void main() {
-  runApp(const Application());
+  initServiceLocator();
+  runApp(Application());
 }
 
 class Application extends StatelessWidget {
@@ -10,6 +12,9 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScren(),
+    );
   }
 }
